@@ -30,5 +30,7 @@ describe("Test the root path", () => {
     test("It should response with 404 when the server The server has not found anything matching the Request", async () => {
         const response = await request(app).get("/api/albums");
         expect(response.statusCode).toBe(200);
+        expect(response).toBeNull();
+        expect(response).toBeDefined();
     });
 });

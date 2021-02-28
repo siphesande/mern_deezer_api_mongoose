@@ -21,7 +21,7 @@ export async function showArtists(search_term) {
             picture_small: item.picture_small,
             tracklist: item.tracklist
         }))
-   return  shorten_results;
+        return shorten_results;
 
     } catch (e) {
         console.log({ msg: e.message });
@@ -45,8 +45,8 @@ export async function showAlbums(search_term) {
             nb_tracks: item.nb_tracks,
             tracklist: item.record_type
         }))
-   return  shorten_results;
-        
+        return shorten_results;
+
 
     } catch (e) {
         console.log({ msg: e.message });
