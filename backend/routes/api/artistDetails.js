@@ -3,6 +3,7 @@ import { Router } from 'express';
 // Artist Details Model
 import ArtistDetails from '../../models/ArtistDetails.js';
 import {  showArtists } from '../../util/functions.js';
+//import {  getArtistsWithtrackList } from '../../util/functions.js';
 
 
 const router = Router();
@@ -48,7 +49,7 @@ router.post('/', async (req, res) => {
           });
           const item = await newListOfArtists.save();
           if (!item) throw Error('Something went wrong saving the list searched artist');
-          //console.log(show_artists)
+          
           res.status(200).json(show_artists);
         }
     

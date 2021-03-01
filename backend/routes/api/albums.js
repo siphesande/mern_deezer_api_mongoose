@@ -38,18 +38,19 @@ router.post('/', async (req, res) => {
   console.log('server >', `${req.body.term}`)
 
   try{
-    let find_albums_frm_db = await Albums.find({'albums': { $elemMatch:{ name: req.body.title }}})
+    let find_albums_frm_db = await Albums.find({'albums': { $elemMatch:{ name: req.body.term }}})
     if (!find_albums_frm_db || find_albums_frm_db.length === 0){
       try {
         let show_albums = await showAlbums(req.body.term)
         
         if(show_albums){
           const newListOfAlbums = new Albums({
-            artist_details: show_albums
+            albums: show_albums
           });
           const albums_of_an_artist = await newListOfAlbums.save();
           if (!albums_of_an_artist) throw Error('Something went wrong saving the albums of an artist');
-          //console.log(show_albums)
+          console.log('frm api')
+          console.log(show_albums)
           res.status(200).json(show_albums);
         }
     
