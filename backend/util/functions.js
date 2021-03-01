@@ -41,7 +41,7 @@ export async function showAlbums(search_term) {
         let shorten_results = results.map(item => ({
             id: item.id,
             title: item.title,
-            cover_small: item.cover_small,
+            cover_medium: item.cover_medium,
             nb_tracks: item.nb_tracks,
             tracklist: item.record_type
         }))
