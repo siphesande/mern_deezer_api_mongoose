@@ -10,7 +10,8 @@ You input a word/term on the input form. The user see a list/grid of search resu
 # Install dependencies (server & client)npm install (You can also use yarn to install)
 cd backend && npm install
 
-# Server only (:5000)npm run devornode server
+# Server only (:5000) On the terminal 
+npm run dev or node server
 cd client && npm install 
 
 # On Front/Client only (:3000)npm start 
