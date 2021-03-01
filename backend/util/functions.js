@@ -1,8 +1,7 @@
 import fetch from 'node-fetch';
 import config from '../config/index.js';
 
-//const SEARCH_URL = 'https://api.deezer.com';
-//const ACCESS_TOKEN = 'frBPs4Ov7zTXDmnChogsZAAPQjTcutLlc3YrCPnLkngQ2Sgz4xx&expires=3600'
+
 export async function showArtists(search_term) {
     const requestOptions = {
         method: 'GET',
@@ -11,7 +10,7 @@ export async function showArtists(search_term) {
         },
     };
     try {
-        let response = await fetch(`${config.SEARCH_URL}/search/artist?q=linked`, requestOptions);
+        let response = await fetch(`${config.SEARCH_URL}/search/artist?q=${search_term}`, requestOptions);
         let artists_list = await response.json();
         let results = artists_list.data
         let shorten_results = results.map(item => ({
