@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
  A basic caching utility
 */
 router.post('/', async (req, res) => {
-  console.log('server >', `${req.body.term}`)
+ 
 
   try{
     let find_artists_frm_db = await ArtistDetails.find({'artist_details': { $elemMatch:{ name: req.body.term }}})

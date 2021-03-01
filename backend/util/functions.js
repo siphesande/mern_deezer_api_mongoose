@@ -18,6 +18,7 @@ export async function showArtists(search_term) {
             name: item.name,
             nb_fan: item.nb_fan,
             picture_small: item.picture_small,
+            picture_medium: item.picture_medium,
             tracklist: item.tracklist
         }))
         return shorten_results;
@@ -34,7 +35,7 @@ export async function showAlbums(search_term) {
         },
     };
     try {
-        let response = await fetch(`${config.SEARCH_URL}/search/album?q=eminem`, requestOptions);
+        let response = await fetch(`${config.SEARCH_URL}/search/album?q=${search_term}`, requestOptions);
         let artists_list = await response.json();
         let results = artists_list.data
         let shorten_results = results.map(item => ({
