@@ -11,7 +11,7 @@ You input a word/term on the input form. The user see a list/grid of search resu
 cd backend && npm install
 
 # Server only (:5000)npm run devornode server
-cd frontend && npm install 
+cd client && npm install 
 
 # On Front/Client only (:3000)npm start 
 

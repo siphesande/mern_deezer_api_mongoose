@@ -17,20 +17,21 @@ describe("Test the root path", () => {
 });
 
 
-describe("Test the root path", () => {
-    test("It should response the GET method", async () => {
-        const response = await request(app).get("/api/artist_details");
+describe("Test post /api/artist_details request ", () => {
+    test("It should response to the POST method (/api/artist_details)", async () => {
+        const response = await request(app)
+        .post("/api/artist_details")
+        .send({ data: 'Jarek', });
         expect(response.statusCode).toBe(200);
     });
 });
 
 
-
 describe("Test the root path", () => {
-    test("It should response with 404 when the server The server has not found anything matching the Request", async () => {
-        const response = await request(app).get("/api/albums");
+    test("It should response with 200 when the server The server has found anything matching the Request", async () => {
+        const response = await request(app).post("/api/albums");
         expect(response.statusCode).toBe(200);
-        expect(response).toBeNull();
-        expect(response).toBeDefined();
+        expect(z).not.toBeNull();
+        expect(z).toBeDefined();
     });
 });
