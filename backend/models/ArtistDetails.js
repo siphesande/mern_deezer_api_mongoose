@@ -6,7 +6,7 @@ const ArtistDetailsSchema = new mongoose.Schema({
     type: [],
     required: true
   },
-  createdAt: { type: Date, expires: '30m', default: Date.now },
+  createdAt: { type: Date, expires: '30m', default: Date.now }, //a lifespan of 30 mim
 });
 
 const ArtistDetails = mongoose.model('artistDetails', ArtistDetailsSchema);

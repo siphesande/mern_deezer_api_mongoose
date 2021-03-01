@@ -17,8 +17,6 @@ router.get('/', async (req, res) => {
   try {
     const artist_details = await ArtistDetails.find();
     if (!artist_details) throw Error('No Artist Details');
-    
-
     res.status(200).json(artist_details);
   } catch (e) {
     res.status(400).json({ msg: e.message });
@@ -31,6 +29,10 @@ router.get('/', async (req, res) => {
  * @access  Private
  */
 
+/*
+  An express api middle layer to interface with the deezer API on the clients behalf.
+ A basic caching utility
+*/
 router.post('/', async (req, res) => {
   console.log('server >', `${req.body.term}`)
 
@@ -45,7 +47,7 @@ router.post('/', async (req, res) => {
             artist_details: show_artists
           });
           const item = await newListOfArtists.save();
-          if (!item) throw Error('Something went wrong saving the item');
+          if (!item) throw Error('Something went wrong saving the list searched artist');
           //console.log(show_artists)
           res.status(200).json(show_artists);
         }
@@ -62,12 +64,9 @@ router.post('/', async (req, res) => {
     }
     
   }catch (e){
+    res.status(400).json({ msg: e.message });
 
-  }
- 
-
+}
 });
-
-
 
 export default router;

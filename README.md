@@ -18,6 +18,12 @@ cd client && npm install
 # Build for production (Builds into server ./public)
 cd frontend && npm run build
 
+# .env file
+On the backend you need to add  the  .env file  with environment variables.MONGO_URI= PUT_YOUR_MONGODB_URI_HERE
+PORT = 5000
+ACCESS_TOKEN = PUT_DEEZER_ACCES_TOKEN_HERE
+SEARCH_URL = 'https://api.deezer.com'
+
 # The backend is using Jest and Supertest for Testing 
 
 ```

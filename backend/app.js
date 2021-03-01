@@ -11,6 +11,7 @@ import fetch from 'node-fetch'
 import artistRoutes from './routes/api/artistDetails.js';
 import albumRoutes from './routes/api/albums.js';
 
+// functions
 import {  showArtists } from './util/functions.js';
 
 
@@ -47,7 +48,7 @@ mongoose
 // Use Routes
 
 app.use('/api/artist_details', artistRoutes);
-//app.use('/api/albums', albumRoutes);
+app.use('/api/albums', albumRoutes);
 app.get('/', (req, res) => {
   res.status(200).json({ msg: "Deezer Search API" });
 })
