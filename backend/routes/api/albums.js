@@ -38,7 +38,8 @@ router.post('/', async (req, res) => {
   console.log('server >', `${req.body.term}`)
 
   try{
-    let find_albums_frm_db = await Albums.find({'albums': { $elemMatch:{ name: req.body.term }}})
+    let find_albums_frm_db = await Albums.find({'albums': { $elemMatch:{ artist: req.body.term }}})
+    
     if (!find_albums_frm_db || find_albums_frm_db.length === 0){
       try {
         let show_albums = await showAlbums(req.body.term)
@@ -59,7 +60,7 @@ router.post('/', async (req, res) => {
         res.status(400).json({ msg: e.message });
       }
 
-    }else{
+    }else{1
       console.log('find_albums_frm_db')
       console.log(find_albums_frm_db)
       res.status(200).json(find_albums_frm_db);
@@ -72,3 +73,4 @@ router.post('/', async (req, res) => {
 });
 
 export default router;
+12345
