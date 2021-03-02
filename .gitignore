@@ -2,6 +2,8 @@
 /backend/node_modules
 /react_client/node_modules
 
+/react_client/node_modules/.eslintcache
+
 
 /.pnp
 .pnp.js
