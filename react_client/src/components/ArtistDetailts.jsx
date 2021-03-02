@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Typography from '@material-ui/core/Typography';
-import { Link, RouteComponentProps} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import ArtistCard from './ArtistCard';
 import Albums from './Albums';
 

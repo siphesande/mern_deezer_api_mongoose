@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {searchAlbums} from '../actions/actions';
 import Loading from './Loading';
@@ -15,7 +15,7 @@ const Albums = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch()
   const artist_name = props.detailed_artist_array[0].name
-  const [term,  setTerm] = useState(props.detailed_artist_array[0].name);
+  //const [term,  setTerm] = useState(props.detailed_artist_array[0].name);
   let albums_results = useSelector(state => state.albums.albums);
   let loading = useSelector(state => state.albums.loading_albums);
   let albums_error = useSelector(state => state.albums.albums_error);
@@ -32,7 +32,7 @@ const Albums = (props) => {
       artist_name
     }))
   }
- console.log(artist_name);
+
   
 
   if (albums_error) {
