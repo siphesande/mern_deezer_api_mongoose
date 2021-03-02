@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
   console.log('server >', `${req.body.term}`)
 
   try{
-    let find_albums_frm_db = await Albums.find({'albums': { $elemMatch:{ artist: req.body.term }}})
+    let find_albums_frm_db = await Albums.find({"artist.name": req.body.term});
     
     if (!find_albums_frm_db || find_albums_frm_db.length === 0){
       try {
