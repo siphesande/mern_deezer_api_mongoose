@@ -23,7 +23,7 @@ describe("Test '/api/artist_details' POST request ", () => {
     test("It should response to the POST method (/api/artist_details)", async () => {
         const response = await request(app)
         .post("/api/artist_details")
-        .send({ data: 'Adel', });
+        .send({ data: 'Adel' });
         expect(response.statusCode).toBe(200);
     });
 });
