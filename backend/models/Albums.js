@@ -6,7 +6,7 @@ const AlbumSchema = new mongoose.Schema({
     type: [],
     required: true
   },
-  createdAt: { type: Date, expires: '30m', default: Date.now }, //a lifespan of 30 mim
+  createdAt: { type: Date, expires: '2m', default: Date.now }, //expires (a lifespan)
 });
 
 const Albums = mongoose.model('albums', AlbumSchema);

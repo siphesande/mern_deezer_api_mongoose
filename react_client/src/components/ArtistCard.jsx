@@ -1,16 +1,11 @@
 import React from "react";
-import {
-  Theme,
-  createStyles,
-  makeStyles,
-  useTheme,
-} from "@material-ui/core/styles";
+import {useTheme} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import useStyles from "./artistCardStyles";
-import { Link, RouteComponentProps } from "react-router-dom";
+
 
 
 const ArtistCard = (props) => {

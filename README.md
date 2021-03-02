@@ -7,12 +7,12 @@ You input a word/term on the input form. The user see a list/grid of search resu
 ## Quick Start
 ```# On the terminal
 
-# Install dependencies (server & client)npm install (You can also use yarn to install)
+# Install dependencies (server & react_client)npm install (You can also use yarn to install)
 cd backend && npm install
 
 # Server only (:5000) On the terminal 
 npm run dev or node server
-cd client && npm install 
+cd react_client && npm install 
 
 # On Front/Client only (:3000)npm start 
 

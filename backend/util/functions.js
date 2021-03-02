@@ -21,17 +21,41 @@ export async function showArtists(search_term) {
             picture_small: item.picture_small,
             picture_medium: item.picture_medium,
             tracklist: item.tracklist
-
-            
         }))
-        
-        
         return shorten_results;
 
     } catch (e) {
         console.log({ msg: e.message });
     }
 }
+
+
+export async function showAlbums(search_term) {
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Authorization': `${config.ACCESS_TOKEN}`
+        },
+    };
+    try {
+        let response = await fetch(`${config.SEARCH_URL}/search/album?q=${search_term}`, requestOptions);
+        let artists_list = await response.json();
+        let results = artists_list.data
+       
+        let album_results = results.map(item => ({
+            id: item.id,
+            title: item.title,
+            cover_medium: item.cover_medium,
+            nb_tracks: item.nb_tracks,
+        }))
+        return album_results;
+
+
+    } catch (e) {
+        console.log({ msg: e.message });
+    }
+}
+
 
 export async function getArtistsWithtrackList(show_artists) {
     const requestOptions = {
@@ -63,29 +87,3 @@ export async function getArtistsWithtrackList(show_artists) {
 }
 
 
-export async function showAlbums(search_term) {
-    const requestOptions = {
-        method: 'GET',
-        headers: {
-            'Authorization': `${config.ACCESS_TOKEN}`
-        },
-    };
-    try {
-        let response = await fetch(`${config.SEARCH_URL}/search/album?q=${search_term}`, requestOptions);
-        let artists_list = await response.json();
-        let results = artists_list.data
-       
-        let album_results = results.map(item => ({
-            id: item.id,
-            title: item.title,
-            cover_medium: item.cover_medium,
-            nb_tracks: item.nb_tracks,
-           
-        }))
-        return album_results;
-
-
-    } catch (e) {
-        console.log({ msg: e.message });
-    }
-}
