@@ -23,7 +23,7 @@ describe("Test '/api/artist_details' POST request ", () => {
     test("It should response to the POST method (/api/artist_details)", async () => {
         const response = await request(app)
         .post("/api/artist_details")
-        .send({ data: 'Jarek', });
+        .send({ data: 'Adel', });
         expect(response.statusCode).toBe(200);
     });
 });
@@ -31,7 +31,9 @@ describe("Test '/api/artist_details' POST request ", () => {
 
 describe("Test /api/albums POST request", () => {
     test("It should response with 200 when the server The server has found anything matching the Request", async () => {
-        const response = await request(app).post("/api/albums");
+        const response = await request(app)
+        .post("/api/albums")
+        .send({ data: 'Adel', });
         expect(response.statusCode).toBe(200);
         expect(response).not.toBeNull();
         expect(response).toBeDefined();
