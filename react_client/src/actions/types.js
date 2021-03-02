@@ -1,0 +1,7 @@
+export const SEARCH_ARTISTS = "SEARCH_ARTISTS";
+export const SEARCH_ALBUMS = "SEARCH_ALBUMS";
+export const ARTISTS_ERROR = "ARTISTS_ERROR";
+export const ALBUMS_ERROR = "UPDATE_TODO";
+export const LOAD_ARTISTS = "LOADING_ARTISTS";
+export const LOAD_ALBUMS = "LOADING_ALBUMS";
+export const REFRESH_STATE = "REFRESH_STATE";
