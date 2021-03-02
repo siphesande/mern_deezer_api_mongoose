@@ -23,18 +23,19 @@ describe("Test '/api/artist_details' POST request ", () => {
     test("It should response to the POST method (/api/artist_details)", async () => {
         const response = await request(app)
         .post("/api/artist_details")
-        .send({ data: 'Adel' });
-        expect(response.statusCode).toBe(200);
+        expect(response.statusCode).toEqual(201)
+        expect(response.body).toHaveProperty('post')
     });
 });
 
 
 describe("Test /api/albums POST request", () => {
-    test("It should response with 200 when the server The server has found anything matching the Request", async () => {
+    test("It should response with 201 when the server The server has found anything matching the Request", async () => {
         const response = await request(app)
         .post("/api/albums")
         .send({ data: 'Adel', });
-        expect(response.statusCode).toBe(200);
+        expect(response.statusCode).toEqual(201)
+        expect(response.body).toHaveProperty('post')
         expect(response).not.toBeNull();
         expect(response).toBeDefined();
     });
