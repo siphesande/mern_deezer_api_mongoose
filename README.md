@@ -26,5 +26,8 @@ ACCESS_TOKEN = PUT_DEEZER_ACCES_TOKEN_HERE
 SEARCH_URL = 'https://api.deezer.com'
 
 # The backend is using Jest and Supertest for Testing 
+To run tests
+cd backend
+npm test
 
 ```

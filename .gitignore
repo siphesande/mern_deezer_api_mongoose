@@ -3,6 +3,8 @@
 /react_client/node_modules
 
 /react_client/node_modules/.eslintcache
+/react_client/node_modules/.cache
+/react_client/node_modules/
 
 
 /.pnp
