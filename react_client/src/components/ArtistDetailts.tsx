@@ -27,7 +27,7 @@ const ArtistDetailts  = ({ match }) => {
   }
   }, []);
 
-  console.log(detailed_artist_array[0])
+  
 
   
 
